@@ -5,6 +5,5 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8080
-
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "-w", "1", "app:app"]
+# Specify number of workers to the number of CPU cores availible
+CMD exec gunicorn --bind :$PORT --workers 4 --threads 8 --timeout 0 app:app
