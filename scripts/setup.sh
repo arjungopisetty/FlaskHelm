@@ -7,5 +7,3 @@ gcloud auth activate-service-account --key-file google-service-account-creds.jso
 gcloud config set project flaskhelm
 gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project flaskhelm
 gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
-cat "$HOME/.docker/config.json"
-echo "$DOCKER_CONFIG"
