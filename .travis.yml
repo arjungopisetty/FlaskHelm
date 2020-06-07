@@ -1,3 +1,6 @@
+env:
+  global:
+    CLOUDSDK_CORE_DISABLE_PROMPTS=1
 services:
 - docker
 cache:
@@ -9,8 +12,7 @@ jobs:
     script:
     - gcloud version || true
     - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk;
-      export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com |
-      bash; fi
+      curl https://sdk.cloud.google.com | bash; fi
     - source /home/travis/google-cloud-sdk/path.bash.inc
     - gcloud components update kubectl
     - gcloud auth activate-service-account --key-file google-service-account-creds.json
