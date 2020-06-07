@@ -1,0 +1,33 @@
+services:
+- docker
+
+cache:
+  directories:
+  - "$HOME/google-cloud-sdk/"
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_7be3cdf60349_key -iv $encrypted_7be3cdf60349_iv
+  -in flaskhelm-b452fa1f7b6f.json.enc -out flaskhelm-b452fa1f7b6f.json -d
+
+jobs:
+  include:
+    - stage: setup
+      script:
+      - gcloud version || true
+      - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
+        CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+      - source /home/travis/google-cloud-sdk/path.bash.inc
+      - gcloud components update kubectl
+      - gcloud version
+      - gcloud auth activate-service-account --key-file flaskhelm-b452fa1f7b6f.json
+      - gcloud config set project flaskhelm
+      - gcloud container clusters \
+          get-credentials my-first-cluster-1 \
+          --zone us-central1-c \
+          --project flaskhelm
+      - gcloud auth configure-docker
+    - stage: build
+      script: docker build -t gcr.io/flaskhelm/flask-hello-world:$1.4.0 .
+    - stage: push
+      script: docker push gcr.io/flaskhelm/flask-hello-world:$1.4.0
+
