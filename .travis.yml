@@ -9,13 +9,15 @@ cache:
   - "$HOME/google-cloud-sdk/"
 jobs:
   include:
-    script:
-      - stage: setup
-        script: bash ./scripts/setup.sh
-      - stage: build
-        script: bash ./scripts/build.sh
-      - stage: deploy
-        script: bash ./scripts/deploy.sh
+    - name: "Setup"
+      script: 
+        - bash scripts/setup.sh
+    - name: "Build"
+      script: 
+        - bash scripts/build.sh
+    - name: "Deploy"
+      script: 
+        - bash scripts/deploy.sh
 before_install:
 - ls -l
 - openssl aes-256-cbc -K $encrypted_86e0ec7377c5_key -iv $encrypted_86e0ec7377c5_iv
