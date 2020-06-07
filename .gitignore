@@ -269,6 +269,6 @@ requirements.lock
 charts
 
 # Credentials
-google-service-account-creds
+google-service-account-creds.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,flask,macos,emacs
