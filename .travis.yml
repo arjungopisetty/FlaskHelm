@@ -3,9 +3,9 @@ env:
   global: CLOUDSDK_CORE_DISABLE_PROMPTS=1
 services:
 - docker
-#cache:
-#  directories:
-#  - "$HOME/google-cloud-sdk/"
+cache:
+  directories:
+  - "$HOME/google-cloud-sdk/"
 script:
 - bash scripts/setup.sh
 - bash scripts/build.sh
