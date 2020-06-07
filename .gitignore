@@ -264,4 +264,8 @@ Temporary Items
 
 # Pyre type checker
 
+# Helm
+requirements.lock
+charts
+
 # End of https://www.toptal.com/developers/gitignore/api/python,flask,macos,emacs
