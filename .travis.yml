@@ -13,8 +13,7 @@ jobs:
       bash; fi
     - source /home/travis/google-cloud-sdk/path.bash.inc
     - gcloud components update kubectl
-    - gcloud version
-    - gcloud auth activate-service-account --key-file flaskhelm-b452fa1f7b6f.json
+    - gcloud auth activate-service-account --key-file google-service-account-creds.json
     - gcloud config set project flaskhelm
     - gcloud container clusters \ get-credentials my-first-cluster-1 \ --zone us-central1-c
       \ --project flaskhelm
