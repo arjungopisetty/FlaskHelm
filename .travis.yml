@@ -1,4 +1,5 @@
-dist: bionic
+os: linux
+language: bash
 env:
   global: CLOUDSDK_CORE_DISABLE_PROMPTS=1
 services:
