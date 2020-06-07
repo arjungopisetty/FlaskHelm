@@ -10,11 +10,11 @@ jobs:
   include:
     script:
       - stage: setup
-        script: ci/setup.sh
+        script: bash ci/setup.sh
       - stage: build
-        script: ci/build.sh
+        script: bash ci/build.sh
       - stage: deploy
-        script: ci/deploy.sh
+        script: bash ci/deploy.sh
 before_install:
 - openssl aes-256-cbc -K $encrypted_86e0ec7377c5_key -iv $encrypted_86e0ec7377c5_iv
   -in google-service-account-creds.json.enc -out google-service-account-creds.json
