@@ -1,4 +1,4 @@
-language: bash
+dist: bionic
 env:
   global:
     CLOUDSDK_CORE_DISABLE_PROMPTS=1
