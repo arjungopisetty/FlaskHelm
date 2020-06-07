@@ -6,22 +6,17 @@ services:
 cache:
   directories:
   - "$HOME/google-cloud-sdk/"
-jobs:
-  include:
-  - stage: setup
-    script:
-    - gcloud version || true
-    - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk;
-      curl https://sdk.cloud.google.com | bash; fi
-    - source /home/travis/google-cloud-sdk/path.bash.inc
-    - gcloud auth activate-service-account --key-file google-service-account-creds.json
-    - gcloud config set project flaskhelm
-    - gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project flaskhelm
-    - gcloud auth configure-docker
-  - stage: build
-    script: docker build -t gcr.io/flaskhelm/flask-hello-world:$1.4.0 .
-  - stage: push
-    script: docker push gcr.io/flaskhelm/flask-hello-world:$1.4.0
+script:
+- gcloud version || true
+- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk;
+  curl https://sdk.cloud.google.com | bash; fi
+- source /home/travis/google-cloud-sdk/path.bash.inc
+- gcloud auth activate-service-account --key-file google-service-account-creds.json
+- gcloud config set project flaskhelm
+- gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project flaskhelm
+- gcloud auth configure-docker
+- docker build -t gcr.io/flaskhelm/flask-hello-world:1.2.0 .
+- docker push gcr.io/flaskhelm/flask-hello-world:1.2.0
 before_install:
 - openssl aes-256-cbc -K $encrypted_86e0ec7377c5_key -iv $encrypted_86e0ec7377c5_iv
   -in google-service-account-creds.json.enc -out google-service-account-creds.json
