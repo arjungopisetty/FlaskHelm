@@ -9,13 +9,13 @@ cache:
   - "$HOME/google-cloud-sdk/"
 jobs:
   include:
-    - name: "Setup"
+    - stage: "Setup"
       script: 
         - bash scripts/setup.sh
-    - name: "Build"
+    - stage: "Build"
       script: 
         - bash scripts/build.sh
-    - name: "Deploy"
+    - stage: "Deploy"
       script: 
         - bash scripts/deploy.sh
 before_install:
