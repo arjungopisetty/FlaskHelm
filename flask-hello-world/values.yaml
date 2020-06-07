@@ -45,11 +45,12 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: flask-hello-world-ip
     # kubernetes.io/tls-acme: "true"
-  # hosts:
-  #  - host: chart-example.local
-  #    paths: []
-  # tls:
+  hosts:
+    - host: flask-hello-world.example
+      paths: [/]
+  tls: []
   #  enabled: false
   #  - secretName: chart-example-tls
   #    hosts:
