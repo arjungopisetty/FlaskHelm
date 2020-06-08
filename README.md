@@ -11,4 +11,4 @@ helm install myhelmrepo/flask-hello-world
 ```
 
 ## Production
-The chart is running on a GKE cluster. The app is available at this free subdomain: [flaskhelloworld.crabdance.com](http://flaskhelloworld.crabdance.com).
+The chart is running on a GKE cluster. The app is available at this free subdomain: [flaskhelloworld.crabdance.com](https://flaskhelloworld.crabdance.com).
