@@ -8,7 +8,7 @@ image:
   repository: gcr.io/flaskhelm/flask-hello-world
   pullPolicy: Always
   # Overrides the image tag whose default is the chart version.
-  tag: "latest"
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: ""
@@ -42,18 +42,21 @@ service:
   internalPort: 8080
 
 ingress:
-  enabled: true
   annotations:
     kubernetes.io/ingress.class: gce
     kubernetes.io/ingress.global-static-ip-name: flask-hello-world-ip
+    networking.gke.io/managed-certificates: flask-hello-world-certificate
+  enabled: true
   hosts:
-    - host: flaskhelloworld.crabdance.com
-      paths: [/]
+  - host: flaskhelloworld.crabdance.com
+    paths:
+    - /
   tls: []
-  #  enabled: false
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+
+certificates:
+  enabled: true
+  hosts:
+  - flaskhelloworld.crabdance.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -79,3 +82,4 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
