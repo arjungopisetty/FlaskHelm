@@ -1,4 +1,4 @@
-# FlaskHelm
+# FlaskHelm [![Build Status](https://travis-ci.com/arjungopisetty/FlaskHelm.svg?branch=master)](https://travis-ci.com/arjungopisetty/FlaskHelm)
 
 This project provides a basic structure for running a web application using Flask, Docker, Kubernetes and Helm. The application uses Guicorn display "Hello World!", accessable in the container on port 8080. It is currently running on GKE using the GCE ingress controller, so customize the ingress accordingly to your controller. 
 
@@ -9,4 +9,4 @@ helm install myhelmrepo/flask-hello-world
 ```
 
 ## Deployment
-The chart is running on a GKE cluster. The app is available at the static IP address: [34.120.196.36](http://34.120.196.36).
+The chart is running on a GKE cluster. The app is available at this free subdomain: [flaskhelloworld.crabdance.com](http://flaskhelloworld.crabdance.com).
