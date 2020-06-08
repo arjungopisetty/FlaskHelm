@@ -9,4 +9,4 @@ helm install myhelmrepo/flask-hello-world
 ```
 
 ## Deployment
-The chart is running on a GKE cluster. The app is available at the static IP address: [34.120.196.36](http://34.120.196.36).
+The chart is running on a GKE cluster. The app is available at this free subdomain: [flaskhelloworld.crabdance.com](http://flaskhelloworld.crabdance.com).
