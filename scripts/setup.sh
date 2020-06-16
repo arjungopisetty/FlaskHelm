@@ -8,5 +8,5 @@ gcloud config set project flaskhelm
 gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project flaskhelm
 gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
 
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 helm plugin install https://github.com/mbenabda/helm-local-chart-version
