@@ -3,4 +3,4 @@ appVersion: 1.1.0
 description: A Flask based "Hello World!" Helm chart for Kubernetes
 name: flask-hello-world
 type: application
-version: 1.2.0
+version: 1.3.0
