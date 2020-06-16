@@ -8,7 +8,7 @@ image:
   repository: gcr.io/flaskhelm/flask-hello-world
   pullPolicy: Always
   # Overrides the image tag whose default is the chart version.
-  tag: latest
+  tag: master
 
 imagePullSecrets: []
 nameOverride: ""
