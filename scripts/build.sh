@@ -1,2 +1,5 @@
-docker build -t gcr.io/flaskhelm/flask-hello-world:1.2.0 .
-docker push gcr.io/flaskhelm/flask-hello-world:1.2.0
+git_sha="$(git rev-parse --short HEAD)"
+
+docker build -t flaskhelm/flask-hello-world .
+docker tag flaskhelm/flask-hello-world gcr.io/flaskhelm/flask-hello-world:${git_sha}
+docker push gcr.io/flaskhelm/flask-hello-world:${git_sha}
