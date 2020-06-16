@@ -18,10 +18,5 @@ script:
 - bash scripts/setup.sh
 - bash scripts/build.sh
 - bash scripts/tests.sh
+- if [ "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]; then bash scripts/deploy.sh; fi
 
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master

@@ -65,15 +65,12 @@ main() {
 
   verify_prereqs
 
-  # dry run of the command
-  gsutil rsync -d -n $1 gs://$2
-
-  read -p "Are you sure you would like to continue with these changes? [y/N]} " confirm
-  if [[ $confirm =~ [yY](es)* ]]; then
-    gsutil rsync -d $1 gs://$2
-  else
-    error_exit "Discontinuing sync process."
-  fi
+  #read -p "Are you sure you would like to continue with these changes? [y/N]} " confirm
+  #if [[ $confirm =~ [yY](es)* ]]; then
+  gsutil rsync -d $1 gs://$2
+  #else
+    #error_exit "Discontinuing sync process."
+  #fi
 
   echo "Your remote chart repository now matches the contents of the $1 directory!"
 
