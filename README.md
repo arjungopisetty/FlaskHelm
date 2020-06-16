@@ -6,8 +6,8 @@ I'm experimenting with using the GKE [ManagedCertificate](https://github.com/Goo
 
 ## Install Helm Chart
 ```
-helm repo add myhelmrepo https://arjungopisetty.github.io/helm-chart-repo
-helm install myhelmrepo/flask-hello-world
+helm repo add mybucket https://ci-cd-helm-charts.storage.googleapis.com/
+helm install mybucket/flask-hello-world
 ```
 
 ## Production

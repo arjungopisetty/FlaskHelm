@@ -266,7 +266,7 @@ Temporary Items
 
 # Helm
 requirements.lock
-charts
+charts/*.tgz
 
 # Credentials
 google-service-account-creds.json
