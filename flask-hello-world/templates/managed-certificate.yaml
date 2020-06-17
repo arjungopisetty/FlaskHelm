@@ -1,5 +1,5 @@
 {{- if .Values.certificates.enabled -}}
-apiVersion: networking.gke.io/v1beta1
+apiVersion: networking.gke.io/v1beta2
 kind: ManagedCertificate
 metadata:
   name: {{ include "flask-hello-world.fullname" . }}
