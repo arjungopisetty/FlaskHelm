@@ -48,16 +48,11 @@ ingress:
     networking.gke.io/managed-certificates: flask-hello-world-certificate
     kubernetes.io/ingress.allow-http: "false"
   enabled: true
-  hosts:
-  - host: flaskhelloworld.crabdance.com
-    paths:
-    - /
-  tls: []
 
 certificates:
   enabled: true
   hosts:
-  - flaskhelloworld.crabdance.com
+  - flaskhelloworld.42web.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

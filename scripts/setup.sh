@@ -5,7 +5,7 @@ source /home/travis/google-cloud-sdk/path.bash.inc
 gcloud components install kubectl
 gcloud auth activate-service-account --key-file google-service-account-creds.json --project flaskhelm
 gcloud config set project flaskhelm
-gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project flaskhelm
+gcloud container clusters get-credentials newer-cheaper-cluster --zone us-central1-c --project flaskhelm
 gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
 
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
