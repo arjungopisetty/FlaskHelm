@@ -13,4 +13,4 @@ helm install mybucket/flask-hello-world
 ```
 
 ## Production
-The chart is running on a GKE cluster. The app is available at this free subdomain: [flaskhelloworld.tk](flaskhelloworld.tk).
+The chart is running on a GKE cluster. The app is available at this free subdomain: [flaskhelloworld.tk](flaskhelloworld.tk). If that goes down, it is availble at this reserved IP: http://34.120.196.36/
